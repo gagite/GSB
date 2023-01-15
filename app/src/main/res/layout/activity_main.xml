@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:labelFor="@+id/textview_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:background="#0080BA"
+        android:textColor="@color/white"
+        android:text="Menu Principal"/>
+
+
+    <include layout="@layout/entete"/>
+    <Button
+        android:id="@+id/Button_codeVisiteur"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:backgroundTint="#0080BA"
+        android:onClick="click_menu"
+        android:text="Code visiteur"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button_menu_FraisAuForfait"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:backgroundTint="#0080BA"
+        android:onClick="click_menu"
+        android:textSize="20sp"
+        android:text="Frais au forfait"
+        />
+
+    <Button
+        android:id="@+id/Button_menu_FraisHorsForfait"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:backgroundTint="#0080BA"
+        android:onClick="click_menu"
+        android:textSize="20sp"
+        android:text="Frais hors Forfais" />
+
+
+    <Button
+        android:id="@+id/Button_menu_Parametre"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:backgroundTint="#0080BA"
+        android:onClick="click_menu"
+
+        android:textSize="20sp"
+        android:text=" Paramètres" />
+
+    <Button
+        android:id="@+id/Button_menu_ConsulterLesFrais"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:backgroundTint="#0080BA"
+
+        android:onClick="click_menu"
+        android:text="Consulter les frais"
+        android:textSize="20sp" />
+
+</LinearLayout>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:labelFor="@+id/textview_creeUnCompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:padding="32dp"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:background="#0080BA"
+        android:textColor="@color/white"
+        android:text="Créer un compte"/>
+
+    <include layout="@layout/entete"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:labelFor="@+id/textview_CreeUnCompt_nom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:text="Nom:"/>
+        <EditText
+            android:id="@+id/edittext_CreeUnCompt_nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginLeft="7dp"
+            android:hint="Saisir votre nom."/>
+
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:labelFor="@+id/textview_CreeUnCompt_prenom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:text="Prénom:"/>
+        <EditText
+            android:id="@+id/edittext_CreeUnCompt_prenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginLeft="7dp"
+            android:hint="Saisir votre prénom." />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:labelFor="@+id/textview_CreeUnCompt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:text="Email:"/>
+        <EditText
+            android:id="@+id/edittext_CreeUnCompt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginLeft="7dp"
+            android:hint="Saisir votre Email." />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:labelFor="@+id/textview_CreeUnCompt_mdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:text="Mot de passe:"/>
+        <EditText
+            android:id="@+id/edittext_CreeUnCompt_mdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginLeft="7dp"
+            android:hint="Saisir votre mdp." />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkbox_CreeUnCompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:labelFor="@+id/textview_CreeUnCompt_cgu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:layout_margin="10dp"
+            android:text="j'accepte les conditions d'utilisation et les politiques de confidancialité."
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/Button_CreeUnCompt_continuer"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:backgroundTint="#0080BA"
+        android:textSize="16dp"
+        android:text="Conttinuer"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:labelFor="@+id/textview_CreeUnCompt_dejainscrit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="7dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="déjà inscrit ?:" />
+
+        <Button
+            android:id="@+id/button_CreeUnCompt_dejainscrit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#0080BA"
+            android:padding="16dp"
+            android:textColor="#fff"
+            android:textSize="12dp"
+            android:text=" Se connecter." />
+    </LinearLayout>
+</LinearLayout>

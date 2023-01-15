@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:labelFor="@+id/textview_Connexion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:padding="32dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:background="#0080BA"
+        android:textColor="@color/white"
+        android:text="Connexion"/>
+
+    <include layout="@layout/entete"/>
+    <TextView
+        android:labelFor="@+id/textview_Connexion_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="7dp"
+        android:text="Email:"/>
+    <EditText
+        android:id="@+id/editext_Connexion_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginLeft="7dp"
+        android:hint="Saisir votre Email." />
+    <TextView
+        android:labelFor="@+id/textview_Connexion_mdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="7dp"
+        android:text="Mot de passe:"/>
+    <EditText
+        android:id="@+id/edittext_Connexion_mdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginLeft="7dp"
+        android:hint="Saisir votre mot de passe." />
+    <TextView
+        android:labelFor="@+id/textview_Connexion_codvisiteur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="7dp"
+        tools:text="Code visiteur:"/>
+    <EditText
+        android:id="@+id/edittext_Connexion_codevisiteur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginLeft="7dp"
+        android:hint="Saisir votre code visiteur." />
+    <Button
+        android:id="@+id/Button_Connexion_seconnecter"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:backgroundTint="#0080BA"
+        android:textSize="20dp"
+        android:text="Se connecter"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:labelFor="@+id/textview_Connexion_pasdecompt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="7dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="pas de compte:" />
+
+        <Button
+        android:id="@+id/button_connexion_sinscrir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="16dp"
+            android:backgroundTint="#0080BA"
+        android:textSize="20dp"
+        android:text=" s'inscrire"/>
+</LinearLayout>
+</LinearLayout>

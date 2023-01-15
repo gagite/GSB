@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:labelFor="@+id/textview_FraisHorsForfait"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:background="#0080BA"
+        android:textColor="@color/white"
+        android:text="Frais hors forfait"/>
+
+    <include layout="@layout/entete"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:labelFor="@+id/textview_FraisHorsForfait_libelle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:text="Libellé"/>
+        <EditText
+            android:id="@+id/edittext_FraisHorsForfait_libelle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_marginLeft="7dp"
+            android:hint=""/>
+    </LinearLayout>
+
+    <TextView
+        android:labelFor="@+id/textview_FraisHorsForfait_montant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="7dp"
+        android:text="Montant:"/>
+    <EditText
+        android:id="@+id/edittext_FraisHorsForfait_montant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginLeft="7dp"
+        android:hint="Entrez votre montant."/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:labelFor="@+id/textview_FraisHorsForfait_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:text="Date:"/>
+
+        <CalendarView
+            android:id="@+id/calendarview_FraisHorsForfait_date"
+            android:layout_width="wrap_content"
+            android:layout_height="243dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+    <Button
+        android:id="@+id/button_FraisHorsForfait_valider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#0080BA"
+        android:textSize="20dp"
+        android:text="valider"/>
+
+
+
+    <Button
+        android:id="@+id/button_FraisHorsForfait_supprimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#0080BA"
+        android:textSize="20dp"
+        android:text="supprimer" />
+    </LinearLayout>
+</LinearLayout>
