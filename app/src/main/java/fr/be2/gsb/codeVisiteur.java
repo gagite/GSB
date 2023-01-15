@@ -1,5 +1,6 @@
 package fr.be2.gsb;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -16,6 +17,7 @@ public class codeVisiteur extends AppCompatActivity {
     EditText codeVerif;
     LinearLayout envoyer;
     Integer codeAleatoir;
+    private static final String MON_FICHIER = "GSB_PREF_USER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class codeVisiteur extends AppCompatActivity {
         email = findViewById(R.id.email);
         envoyer = findViewById(R.id.layout_mdpoublier);
         codeVerif= findViewById(R.id.newmdp);
+
     }
 
     public void envoicode(View v){
@@ -43,10 +46,16 @@ public class codeVisiteur extends AppCompatActivity {
         String codeverifStr = codeVerif.getText().toString();
         if (codeAleatoirStr.equals(codeverifStr)){
             Toast.makeText(this, "votre code est bon", Toast.LENGTH_SHORT).show();
+            getSharedPreferences(MON_FICHIER, MODE_PRIVATE)
+                    .edit()
+                    .putString("codeVisiteur", codeVisiteur.getText().toString())
+                    .putString("email",email.getText().toString())
+                    .apply();
 
         }else{
             Toast.makeText(this, "erreur erreur", Toast.LENGTH_SHORT).show();
         }
     }
+
 
 }

@@ -7,16 +7,21 @@ import androidx.core.app.OnNewIntentProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Intent intent;
+    EditText codvisiteur;
+    private static final String MON_FICHIER = "GSB_PREF_USER";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        secure();
         setContentView(R.layout.activity_main);
     }
+
     public void click_menu(View v){
         //String MSG = "";
         switch(v.getId()){
@@ -42,9 +47,19 @@ public class MainActivity extends AppCompatActivity {
         }startActivity(intent);
         //Toast.makeText(this, MSG, Toast.LENGTH_SHORT).show();
     }
+
     public void closeActivity(View v){
         this.finish();
     }
+
+    public void secure(){
+        String cvisiteur= getSharedPreferences("GSB_PREF_USER", MODE_PRIVATE).getString("codeVisiteur","pas authentifie");
+        if (cvisiteur.equals("pas authentifie")) {
+            Intent intent = new Intent(MainActivity.this,codeVisiteur.class);
+            startActivity(intent);
+        }
+    }
+
 
 
     public void envoicode(View view) {

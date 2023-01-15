@@ -95,7 +95,7 @@
         android:textSize="16dp"
         android:layout_marginLeft="7dp"
         android:hint="Saisir votre code." />
-    <Button
+     <Button
         android:id="@+id/valide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
