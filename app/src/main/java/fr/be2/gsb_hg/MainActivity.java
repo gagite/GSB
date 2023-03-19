@@ -1,18 +1,18 @@
-package fr.be2.gsb;
+package fr.be2.gsb_hg;
 
-import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.OnNewIntentProvider;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Intent intent;
     EditText codvisiteur;
+    Context context;
     private static final String MON_FICHIER = "GSB_PREF_USER";
 
     @Override
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void click_menu(View v){
         //String MSG = "";
+
         switch(v.getId()){
             case R.id.button_menu_FraisAuForfait:
                 //MSG ="bouton frais au forfait";
@@ -41,10 +42,15 @@ public class MainActivity extends AppCompatActivity {
                 //MSG = "Paramétre";
                 intent = new Intent(MainActivity.this, consulterlesfrais.class);
                 break;
-            case R.id.Button_codeVisiteur:
-                intent = new Intent(MainActivity.this, codeVisiteur.class);
+            case R.id.Button_deconnexion:
 
-        }startActivity(intent);
+                getSharedPreferences(MON_FICHIER, MODE_PRIVATE)
+                        .edit()
+                        .clear()
+                        .commit();
+
+        }
+        startActivity(intent);
         //Toast.makeText(this, MSG, Toast.LENGTH_SHORT).show();
     }
 
@@ -53,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void secure(){
-        String cvisiteur= getSharedPreferences("GSB_PREF_USER", MODE_PRIVATE).getString("codeVisiteur","pas authentifie");
+        String cvisiteur= getSharedPreferences("GSB_PREF_USER", MODE_PRIVATE).getString("codeVisiteur","pas authentif40ie");
         if (cvisiteur.equals("pas authentifie")) {
             Intent intent = new Intent(MainActivity.this,codeVisiteur.class);
             startActivity(intent);
@@ -62,9 +68,24 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     public void envoicode(View view) {
     }
 
     public void boncode(View view) {
+    }
+
+    public void click_ajouter(View view) {
+    }
+    public void afficherMessage(String titre, String message){
+        AlertDialog.Builder builder=new AlertDialog.Builder(this); //classe qui constuit une boite de dialogue
+        builder.setCancelable(true); //pr que la boite de dialogue soit refermable
+        builder.setTitle(titre);
+        builder.setMessage(message);
+        builder.show();
+
+    }
+
+    public void ShowCal(View view) {
     }
 }

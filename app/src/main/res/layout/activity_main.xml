@@ -26,15 +26,15 @@
 
 
     <include layout="@layout/entete"/>
-    <Button
-        android:id="@+id/Button_codeVisiteur"
+   <Button
+        android:id="@+id/Button_deconnexion"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="16dp"
         android:backgroundTint="#0080BA"
         android:onClick="click_menu"
-        android:text="Code visiteur"
+        android:text="Deconnexion"
         android:textSize="20sp" />
 
     <Button

@@ -77,9 +77,10 @@
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <TextView
-            android:labelFor="@+id/textview_FraisAuForfait_date"
+            android:labelFor="@+id/textview1_FraisAuForfait_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -89,20 +90,30 @@
             android:textSize="16sp"
             android:textStyle="bold"/>
 
-        <CalendarView
-            android:id="@+id/calendarview_FraisAuForfait_date"
+        <TextView
+            android:id="@+id/textview_FraisAuForfait_date"
+            android:layout_width="89dp"
+            android:layout_height="41dp"
+            android:text="jj/mm/aaaa" />
+
+        <ImageButton
+            android:id="@+id/imageButton_fraisaoforfait_date"
             android:layout_width="wrap_content"
-            android:layout_height="100dp" />
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_week"
+            android:onClick="ShowCal"/>
     </LinearLayout>
+
     <Button
         android:id="@+id/Button_FraisAuForfait_ajouter"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:padding="16dp"
         android:backgroundTint="#0080BA"
-        android:textSize="20dp"
-        android:text="ajouter"/>
+        android:onClick="click_ajouter"
+        android:padding="16dp"
+        android:text="ajouter"
+        android:textSize="20dp" />
 
 
 </LinearLayout>

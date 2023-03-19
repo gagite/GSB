@@ -1,14 +1,14 @@
-package fr.be2.gsb;
+package fr.be2.gsb_hg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class parametre extends AppCompatActivity {
+public class connexion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parametre);
+        setContentView(R.layout.activity_connexion);
     }
 }

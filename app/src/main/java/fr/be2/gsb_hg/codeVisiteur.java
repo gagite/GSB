@@ -1,6 +1,6 @@
-package fr.be2.gsb;
+package fr.be2.gsb_hg;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -17,6 +17,8 @@ public class codeVisiteur extends AppCompatActivity {
     EditText codeVerif;
     LinearLayout envoyer;
     Integer codeAleatoir;
+    Intent intent;
+
     private static final String MON_FICHIER = "GSB_PREF_USER";
 
     @Override
@@ -51,6 +53,10 @@ public class codeVisiteur extends AppCompatActivity {
                     .putString("codeVisiteur", codeVisiteur.getText().toString())
                     .putString("email",email.getText().toString())
                     .apply();
+
+            Intent intent = new Intent(codeVisiteur.this,MainActivity.class);
+            startActivity(intent);
+
 
         }else{
             Toast.makeText(this, "erreur erreur", Toast.LENGTH_SHORT).show();
