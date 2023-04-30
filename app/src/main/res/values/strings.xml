@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">GSB</string>
     <string-array name="typeForfait">
-       <item> </item>
+        <item> </item>
         <item>Forfait etape</item>
         <item> frais KM</item>
         <item> Nuité Hotel</item>
@@ -18,5 +18,10 @@
         <item>30</item>
         <item>12.5</item>
     </string-array>
-
+    <string name="some_text">
+        les Frais !
+    </string>
+    <string name="some_hint">
+        Type here to filter&#8230;
+    </string>
 </resources>

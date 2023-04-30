@@ -40,14 +40,15 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.Button_menu_ConsulterLesFrais:
                 //MSG = "Paramétre";
-                intent = new Intent(MainActivity.this, consulterlesfrais.class);
+                intent = new Intent(MainActivity.this, consulter_Frais.class);
                 break;
             case R.id.Button_deconnexion:
+                intent = new Intent(MainActivity.this, codeVisiteur.class);
 
-                getSharedPreferences(MON_FICHIER, MODE_PRIVATE)
+                /**getSharedPreferences(MON_FICHIER, MODE_PRIVATE)
                         .edit()
                         .clear()
-                        .commit();
+                        .commit();*/
 
         }
         startActivity(intent);
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void secure(){
-        String cvisiteur= getSharedPreferences("GSB_PREF_USER", MODE_PRIVATE).getString("codeVisiteur","pas authentif40ie");
+        String cvisiteur= getSharedPreferences("GSB_PREF_USER", MODE_PRIVATE).getString("codeVisiteur","pas authentifie");
         if (cvisiteur.equals("pas authentifie")) {
             Intent intent = new Intent(MainActivity.this,codeVisiteur.class);
             startActivity(intent);
@@ -87,5 +88,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ShowCal(View view) {
+    }
+
+    public void click_code(View view) {
+    }
+
+    public void Valide_code(View view) {
     }
 }

@@ -14,28 +14,29 @@
         android:theme="@style/Theme.GSB"
         tools:targetApi="31">
         <activity
-            android:name="fr.be2.gsb_hg.consulterlesfrais"
+            android:name=".consulter_Frais"
+            android:exported="false" />
+
+        <activity
+            android:name=".parametre"
             android:exported="false" />
         <activity
-            android:name="fr.be2.gsb_hg.parametre"
+            android:name=".codeVisiteur"
             android:exported="false" />
         <activity
-            android:name="fr.be2.gsb_hg.codeVisiteur"
+            android:name=".fraishorsforfait"
             android:exported="false" />
         <activity
-            android:name="fr.be2.gsb_hg.fraishorsforfait"
+            android:name=".frais_au_forfait"
             android:exported="false" />
         <activity
-            android:name="fr.be2.gsb_hg.frais_au_forfait"
+            android:name=".creeuncompte"
             android:exported="false" />
         <activity
-            android:name="fr.be2.gsb_hg.creeuncompte"
+            android:name=".connexion"
             android:exported="false" />
         <activity
-            android:name="fr.be2.gsb_hg.connexion"
-            android:exported="false" />
-        <activity
-            android:name="fr.be2.gsb_hg.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
