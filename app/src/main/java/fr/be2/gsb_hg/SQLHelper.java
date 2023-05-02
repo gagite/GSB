@@ -62,7 +62,8 @@ public class SQLHelper extends SQLiteOpenHelper {
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
             sqLiteDatabase.execSQL(CREATE_TABLE);
-
+            sqLiteDatabase.execSQL(CREATE_PARAMETRES);
+            sqLiteDatabase.execSQL(INIT_PARAMETRES);
         }
 
 
@@ -108,81 +109,10 @@ public class SQLHelper extends SQLiteOpenHelper {
     }
 
 
-    private fr.be2.gsb_hg.SQLHelper SQLHelper;
-    private SQLiteDatabase Sql;
-
-
-    private static final String SQLITE_TABLE = " Frais " ;
-
-
-
-
-
-
-
-
-
-    public void close() {
-        if (SQLHelper != null) {
-            SQLHelper.close();
-        }
-    }
-
-    public long createFrais(String code, String Type_Forfait,
-                            String Quantite, String date) {
-
-        ContentValues initialValues = new ContentValues();
-        initialValues.put(LIBELLE, code);
-        initialValues.put(TYPE_FRAIS, Type_Forfait);
-        initialValues.put(QUANTITE, Quantite);
-        initialValues.put(DATE_SAISIE, date);
-
-        return Sql.insert(SQLITE_TABLE, null, initialValues);
-    }
-    public SQLHelper open() throws SQLException {
-
-        SQLiteDatabase db =this.getWritableDatabase();
-        return this;
-
-    }
-
-    public boolean deleteAllFrais() {
-
-        int doneDelete = 0;
-        doneDelete = Sql.delete(SQLITE_TABLE, null , null);
-        Log.w(TAG, Integer.toString(doneDelete));
-        return doneDelete > 0;
-
-    }
-
-    public Cursor fetchFraisByName(String inputText) throws SQLException {
-        Log.w(TAG, inputText);
-        Cursor mCursor = null;
-        if (inputText == null  ||  inputText.length () == 0)  {
-            mCursor = Sql.query(SQLITE_TABLE, new String[] {"rowid _id",
-                            LIBELLE, TYPE_FRAIS, QUANTITE, DATE_FRAIS},
-                    null, null, null, null, null);
-
-        }
-        else {
-            mCursor = Sql.query(true, SQLITE_TABLE, new String[] {"rowid _id",
-                            LIBELLE, TYPE_FRAIS, QUANTITE, DATE_SAISIE},
-                    TYPE_FRAIS + " like '%" + inputText + "%'", null,
-                    null, null, null, null);
-        }
-        if (mCursor != null) {
-            mCursor.moveToFirst();
-        }
-        return mCursor;
-
-    }
-
-
     public Cursor fetchAllFrais() {
-
-        Cursor mCursor = Sql.query(SQLITE_TABLE, new String[] {"rowid _id",LIBELLE,
-                        TYPE_FRAIS, QUANTITE, DATE_SAISIE},
-
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor mCursor = db.query(DB_TABLE, new String[] { "rowid _id",LIBELLE,TYPE_FRAIS,
+                        MONTANT, QUANTITE ,DATE_SAISIE},
                 null, null, null, null, null);
 
         if (mCursor != null) {
@@ -190,34 +120,40 @@ public class SQLHelper extends SQLiteOpenHelper {
         }
         return mCursor;
     }
-
-    public void insertSomeFrais() {
-
-        createFrais("01585686","Petit dejeuné", "5", "01/01/2017");
-        createFrais("01456895","Nuité Hotel", "20", "01/03/2017");
-        createFrais("01514578","Nuité Hotel", "15", "01/04/2017");
-        createFrais("01531586","Forfait etape", "6", "26/01/2017");
-        createFrais("01467983","Repas restaurant", "2", "29/01/2017");
-        createFrais("01245876","Petit dejeuné", "4", "07/09/2017");
-        createFrais("01542571","Forfait etape", "17", "16/05/2017");
-
-    }
-
-
     public Cursor fetchFrais(String filtre) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor Cursor = db.query(DB_TABLE, new String[]{"rowid _id",LIBELLE,
-                        DATE_SAISIE, MONTANT, QUANTITE},
+        Cursor mCursor = db.query(DB_TABLE, new String[] { "rowid _id",LIBELLE,TYPE_FRAIS,
+                        MONTANT, QUANTITE ,DATE_SAISIE},
                 filtre, null, null, null, null);
 
-        if (Cursor != null) {
-            Cursor.moveToFirst();
+        if (mCursor != null) {
+            mCursor.moveToFirst();
         }
-        return Cursor;
+        return mCursor;
     }
 
-}
+   /** public long createFrais(String code, String Type_Forfait,
+                            String Quantite, String date) {
 
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(ID_FRAIS, code);
+        initialValues.put(TYPE_FRAIS, Type_Forfait);
+        initialValues.put(QUANTITE, Quantite);
+        initialValues.put(DATE_FRAIS, date);
+
+        return db.insert(DB_TABLE, null, initialValues;
+    }
+*/
+    public SQLHelper open() throws SQLException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return this;
+
+    }
+
+
+
+
+}
 
 
 

@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Button_deconnexion:
                 intent = new Intent(MainActivity.this, codeVisiteur.class);
 
-                /**getSharedPreferences(MON_FICHIER, MODE_PRIVATE)
+                getSharedPreferences(MON_FICHIER, MODE_PRIVATE)
                         .edit()
                         .clear()
-                        .commit();*/
+                        .commit();
 
         }
         startActivity(intent);

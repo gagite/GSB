@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class consulter_Frais extends MainActivity {
 
-    private SQLHelper dbHelper;
+    private SQLHelper database;
     private SimpleCursorAdapter dataAdapter;
 
     @Override
@@ -25,21 +25,18 @@ public class consulter_Frais extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulter_frais);
 
-        dbHelper = new SQLHelper(this);
-         dbHelper.open();
-        //Nettoyer les données
-        //dbHelper.deleteAllFrais();
-        //On ajoute des données
-      //  dbHelper.insertSomeFrais();
+        database = new SQLHelper(this);
+         database.open();
+
 
         //Générer le ListView a partir de SQLite Database
-        //displayListView();
+        displayListView();
 
     }
     private void displayListView() {
 
 
-        Cursor cursor = dbHelper.fetchAllFrais();
+        Cursor cursor = database.fetchAllFrais();
 
         // Les colonnes que l’on veut lier
         String[] columns = new String[] {
@@ -84,7 +81,7 @@ public class consulter_Frais extends MainActivity {
             }
         });
 
-        /**EditText myFilter = (EditText) findViewById(R.id.myFilter);
+        EditText myFilter = (EditText) findViewById(R.id.myFilter);
         myFilter.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
@@ -101,9 +98,9 @@ public class consulter_Frais extends MainActivity {
         });
         dataAdapter.setFilterQueryProvider(new FilterQueryProvider() {
             public Cursor runQuery(CharSequence constraint) {
-                return dbHelper.fetchFraisByName(constraint.toString());
+                return database.fetchFrais(constraint.toString());
             }
-        });**/
+        });
 
 
 
