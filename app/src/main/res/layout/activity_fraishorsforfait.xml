@@ -72,23 +72,40 @@
             android:layout_marginLeft="7dp"
             android:text="Date:"/>
 
-        <CalendarView
-            android:id="@+id/calendarview_FraisHorsForfait_date"
+
+
+        <TextView
+            android:id="@+id/textview_Fraishorsorfait_date"
+            android:layout_width="89dp"
+            android:layout_height="41dp"
+            android:text="jj/mm/aaaa" />
+
+        <ImageButton
+            android:id="@+id/imageButton_fraishorsforfait_date"
             android:layout_width="wrap_content"
-            android:layout_height="243dp" />
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_week"
+            android:onClick="ShowCal"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-    <Button
-        android:id="@+id/button_FraisHorsForfait_valider"
+
+
+        <Button
+        android:id="@+id/button_FraisHorsForfait_ajouter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="#0080BA"
         android:textSize="20dp"
-        android:text="valider"/>
+        android:onClick="monClick"
+        android:text="ajouter"/>
+    <Button
+        android:id="@+id/button_FraisHorsForfait_modifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#0080BA"
+        android:textSize="20dp"
+        android:text="modifier"/>
 
 
 
@@ -100,5 +117,5 @@
         android:backgroundTint="#0080BA"
         android:textSize="20dp"
         android:text="supprimer" />
-    </LinearLayout>
+
 </LinearLayout>

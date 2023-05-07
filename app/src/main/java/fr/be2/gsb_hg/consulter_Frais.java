@@ -1,60 +1,66 @@
 package fr.be2.gsb_hg;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.database.Cursor;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.FilterQueryProvider;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class consulter_Frais extends MainActivity {
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
+import android.widget.FilterQueryProvider;
+import android.widget.AdapterView.OnItemClickListener;
 
-    private SQLHelper database;
+import androidx.appcompat.app.AppCompatActivity;
+
+import static java.lang.Integer.parseInt;
+
+public class consulter_Frais extends MainActivity {
     private SimpleCursorAdapter dataAdapter;
+    private SQLHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulter_frais);
+        //j'instancie la classe SQLHelper avec la variable db
+        db = new SQLHelper(this);
+        db.open();
 
-        database = new SQLHelper(this);
-         database.open();
-
-
-        //Générer le ListView a partir de SQLite Database
         displayListView();
-
     }
+
+    /**
+     * Permet de remplir le list view des frais
+     */
     private void displayListView() {
 
-
-        Cursor cursor = database.fetchAllFrais();
+        Cursor cursor = db.fetchAllFrais();
 
         // Les colonnes que l’on veut lier
-        String[] columns = new String[] {
+        String[] columns = new String[]{
                 SQLHelper.LIBELLE,
                 SQLHelper.TYPE_FRAIS,
                 SQLHelper.QUANTITE,
                 SQLHelper.MONTANT,
                 SQLHelper.DATE_SAISIE
+
         };
+
         // Les éléments defnis dans le XML auxquels les données sont liées
-        int[] to = new int[] {
+        int[] to = new int[]{
                 R.id.libelle,
                 R.id.typeFrais,
                 R.id.quantite,
                 R.id.montant,
                 R.id.dateSaisie
+
         };
-        //On créer l'adaptateur à l'aide du curseur pointant sur les données souhaitées  ainsi que les informations de mise en page
+        //On crée l'adaptateur à l'aide du curseur pointant sur les données souhaitées
+        // ainsi que les informations de mise en page
         dataAdapter = new SimpleCursorAdapter(
                 this, R.layout.detail_frais,
                 cursor,
@@ -65,6 +71,8 @@ public class consulter_Frais extends MainActivity {
         ListView listView = (ListView) findViewById(R.id.listView1);
         // Attribuer l’adapter au ListView
         listView.setAdapter(dataAdapter);
+
+        //Pour que l'id du frais s'affiche quand on clique dessus, et pour supprimer le frais
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> listView, View view,
@@ -72,40 +80,17 @@ public class consulter_Frais extends MainActivity {
                 // On obtient le curseur, positionne sur la ligne correspondante dans le jeu de résultats
                 Cursor cursor = (Cursor) listView.getItemAtPosition(position);
 
-                // On obtient la Capital du pays
-                String countryCode =
-                        cursor.getString(cursor.getColumnIndexOrThrow("libelle"));
-                Toast.makeText(getApplicationContext(),
-                        countryCode, Toast.LENGTH_SHORT).show();
-
+                //On obtient l'id du frais en cliquant sur le frais
+                String myId = cursor.getString(cursor.getColumnIndexOrThrow("ID"));
+                Toast.makeText(getApplicationContext(), myId, Toast.LENGTH_SHORT).show();
+                db.deleteData (parseInt (myId));
             }
         });
-
-        EditText myFilter = (EditText) findViewById(R.id.myFilter);
-        myFilter.addTextChangedListener(new TextWatcher() {
-
-            public void afterTextChanged(Editable s) {
-            }
-
-            public void beforeTextChanged(CharSequence s, int start,
-                                          int count, int after) {
-            }
-
-            public void onTextChanged(CharSequence s, int start,
-                                      int before, int count) {
-                dataAdapter.getFilter().filter(s.toString());
-            }
-        });
-        dataAdapter.setFilterQueryProvider(new FilterQueryProvider() {
-            public Cursor runQuery(CharSequence constraint) {
-                return database.fetchFrais(constraint.toString());
-            }
-        });
-
-
-
-
     }
-}
 
+    public void clique_retour(View view) {
+        finish();
+    }
+
+}
 

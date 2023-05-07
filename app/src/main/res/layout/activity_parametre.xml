@@ -36,7 +36,7 @@
         android:layout_marginLeft="7dp"
         android:text="Email:"/>
     <EditText
-        android:id="@+id/edittext_parametre_email"
+        android:id="@+id/Mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -55,7 +55,7 @@
         android:layout_marginLeft="7dp"
         android:text="Nom:"/>
     <EditText
-        android:id="@+id/edittext_parametre_nom"
+        android:id="@+id/Nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -74,7 +74,7 @@
         android:layout_marginLeft="7dp"
         android:text="Prénom:"/>
     <EditText
-        android:id="@+id/edittext_parametre_Prenom"
+        android:id="@+id/Prenom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -91,7 +91,7 @@
     android:text="Code utilisateur:"/>
 
 <EditText
-    android:id="@+id/coduparametre"
+    android:id="@+id/Codev"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="20dp"
@@ -107,7 +107,7 @@
     android:text="URL:"/>
 
 <EditText
-    android:id="@+id/urlparametre"
+    android:id="@+id/Urlserver"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="20dp"
@@ -122,7 +122,7 @@
         android:layout_marginLeft="7dp"
         android:text="Mot de passe:"/>
     <EditText
-        android:id="@+id/mdpparametre"
+        android:id="@+id/Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -136,5 +136,6 @@
         android:padding="16dp"
         android:backgroundTint="#0080BA"
         android:textSize="20dp"
+        android:onClick ="ClickValider"
         android:text="enregistrer"/>
 </LinearLayout>

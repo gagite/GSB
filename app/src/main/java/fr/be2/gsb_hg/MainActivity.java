@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, fraishorsforfait.class);
                 break;
             case R.id.Button_menu_Parametre:
-                //MSG = "Bouton consulter les frais";
+                //MSG = "Bouton consulter les parametre";
                 intent = new Intent(MainActivity.this, parametre.class);
                 break;
             case R.id.Button_menu_ConsulterLesFrais:
-                //MSG = "Paramétre";
+                //MSG = "consulter les frais";
                 intent = new Intent(MainActivity.this, consulter_Frais.class);
                 break;
             case R.id.Button_deconnexion:
@@ -76,7 +76,10 @@ public class MainActivity extends AppCompatActivity {
     public void boncode(View view) {
     }
 
+
     public void click_ajouter(View view) {
+    }
+    public void monClick(View view) {
     }
     public void afficherMessage(String titre, String message){
         AlertDialog.Builder builder=new AlertDialog.Builder(this); //classe qui constuit une boite de dialogue
@@ -94,5 +97,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Valide_code(View view) {
+    }
+
+    public void ClickValider(View view) {
     }
 }
