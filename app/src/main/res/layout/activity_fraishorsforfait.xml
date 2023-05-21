@@ -75,7 +75,7 @@
 
 
         <TextView
-            android:id="@+id/textview_Fraishorsorfait_date"
+            android:id="@+id/textview_FraisHorsForfait_date"
             android:layout_width="89dp"
             android:layout_height="41dp"
             android:text="jj/mm/aaaa" />
@@ -85,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_week"
-            android:onClick="ShowCal"/>
+            android:onClick="ShowCal1"/>
     </LinearLayout>
 
 
@@ -98,24 +98,5 @@
         android:textSize="20dp"
         android:onClick="monClick"
         android:text="ajouter"/>
-    <Button
-        android:id="@+id/button_FraisHorsForfait_modifier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#0080BA"
-        android:textSize="20dp"
-        android:text="modifier"/>
-
-
-
-    <Button
-        android:id="@+id/button_FraisHorsForfait_supprimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#0080BA"
-        android:textSize="20dp"
-        android:text="supprimer" />
 
 </LinearLayout>

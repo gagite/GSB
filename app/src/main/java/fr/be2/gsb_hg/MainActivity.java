@@ -101,4 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void ClickValider(View view) {
     }
+
+    public void ShowCal1(View view) {
+    }
 }

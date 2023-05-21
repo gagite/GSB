@@ -120,13 +120,13 @@ public class SQLHelper extends SQLiteOpenHelper {
         contentValues.put("prenom", " ");
         contentValues.put("email", " ");
         contentValues.put("urlserveur", " ");
-        contentValues.put("password", " 1");
+
         //insert sert a inserer des donnees, elle insere ds notre table contentValue les contenus
         // des variables que l'utilisateur renseigne
         long result = db.insert(DB_TABLE, null, contentValues);
         return result != -1;
     }
-    public boolean update_parametre(Integer Codev , String Nom , String Prenom, String Mail , String Urlserveur,String Password) {
+    public boolean update_parametre(Integer Codev , String Nom , String Prenom, String Mail , String Urlserveur) {
         //on cree une variable de type sqLitedatabase pr pouvoir y acceder
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -135,12 +135,7 @@ public class SQLHelper extends SQLiteOpenHelper {
         contentValues.put("prenom", Prenom);
         contentValues.put("email", Mail);
         contentValues.put("urlserveur", Urlserveur);
-        if (Password.toString().trim().length() > 0) {
-            contentValues.put("password", Password);
-            sha1Hash(Password.toString(), Codev.toString());
 
-        }//insert sert a inserer des donnees, elle insere ds notre table contentValue les contenus
-        // des variables que l'utilisateur renseigne
         long result = db.update("PARAMETRES",contentValues,"id=1",null);
         return result != -1;
 
